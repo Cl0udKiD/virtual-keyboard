@@ -1,0 +1,81 @@
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 768px;
+    margin: 0 auto;
+}
+
+.title{
+    text-align: center;
+    margin: auto;
+}
+
+.tooltip{
+    text-align: center;
+    margin: auto;
+}
+
+.text-area{
+    width:720px;
+    height: 200px;
+    margin: 20px auto;
+    word-break: break-all;
+}
+
+.keyboard{
+    margin:20px auto;
+    padding: 10px;
+    width: 720px;
+    height: 240px;
+    background: grey;
+}
+
+.row{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    background: #F0F0F0;
+    border: 0;
+    height: 40px;
+    transition: 0.3s;
+}
+
+button.active{
+    background-color: green;
+    border-radius: 20px;
+}
+
+.s-key{
+    width: 40px;
+}
+
+.backspace{
+    width: 80px;
+}
+
+.tab{
+    width: 50px;
+}
+
+.caps{
+    width: 100px;
+}
+
+.enter{
+    width:90px;
+}
+
+.shift{
+    width: 100px;
+}
+
+.shift-r{
+    width:90px;
+}
+
+.space{
+    width: 340px;
+}

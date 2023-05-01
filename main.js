@@ -191,11 +191,11 @@ for (let i = 0; i < buttons.length; ++i) {
   // eslint-disable-next-line no-loop-func
   buttons[i].addEventListener('mousedown', () => {
     if (i === 54 || i === 63 || i === 59) {
-      body.dispatchEvent(new KeyboardEvent('keydown', { key: current[i], location: 2 }));
+      body.dispatchEvent(new KeyboardEvent('keydown', { keyCode: keyCodes[i], location: 2 }));
     } else if (i === 42 || i === 55 || i === 58) {
-      body.dispatchEvent(new KeyboardEvent('keydown', { key: current[i], location: 1 }));
+      body.dispatchEvent(new KeyboardEvent('keydown', { keyCode: keyCodes[i], location: 1 }));
     } else {
-      body.dispatchEvent(new KeyboardEvent('keydown', { key: current[i] }));
+      body.dispatchEvent(new KeyboardEvent('keydown', { keyCode: keyCodes[i] }));
     }
   });
 }
@@ -224,11 +224,11 @@ window.addEventListener('load', getLocalStorage);
 for (let i = 0; i < buttons.length; ++i) {
   buttons[i].addEventListener('mouseup', () => {
     if (i === 54 || i === 63 || i === 59) {
-      body.dispatchEvent(new KeyboardEvent('keyup', { key: current[i], location: 2 }));
+      body.dispatchEvent(new KeyboardEvent('keyup', { keyCode: keyCodes[i], location: 2 }));
     } else if (i === 42 || i === 55 || i === 58) {
-      body.dispatchEvent(new KeyboardEvent('keyup', { key: current[i], location: 1 }));
+      body.dispatchEvent(new KeyboardEvent('keyup', { keyCode: keyCodes[i], location: 1 }));
     } else {
-      body.dispatchEvent(new KeyboardEvent('keyup', { key: current[i] }));
+      body.dispatchEvent(new KeyboardEvent('keyup', { keyCode: keyCodes[i] }));
     }
   });
 }
@@ -292,7 +292,6 @@ body.addEventListener('keydown', (e) => {
         shiftFlag = false;
       }
     }
-    if (e.keyCode === 46)buttons[28].classList.add('active');
     if ((e.keyCode === 17 || e.key === 'Ctrl') && e.location === 1)buttons[55].classList.add('active');
     if ((e.keyCode === 17 || e.key === 'Ctrl') && e.location === 2)buttons[63].classList.add('active');
     if (e.keyCode === 91)buttons[56].classList.add('active');
@@ -300,19 +299,19 @@ body.addEventListener('keydown', (e) => {
       buttons[60].classList.add('active');
       text.setSelectionRange(text.selectionEnd - 1, text.selectionEnd - 1);
     }
-    if (e.keyCode === 40 || e.key === '▼') {
+    if (e.keyCode === 40) {
       buttons[61].classList.add('active');
       text.setSelectionRange(text.selectionEnd + 98, text.selectionEnd + 98);
     }
-    if (e.keyCode === 39 || e.key === '►') {
+    if (e.keyCode === 39) {
       buttons[62].classList.add('active');
       text.setSelectionRange(text.selectionEnd + 1, text.selectionEnd + 1);
     }
-    if (e.keyCode === 38 || e.key === '▲') {
+    if (e.keyCode === 38) {
       buttons[53].classList.add('active');
       text.setSelectionRange(text.selectionEnd - 98, text.selectionEnd - 98);
     }
-    if (e.keyCode === 46 || e.key === 'Del') {
+    if (e.keyCode === 46) {
       buttons[28].classList.add('active');
       const cursor = text.selectionEnd;
       text.value = text.value.substr(0, text.selectionEnd)

@@ -108,7 +108,7 @@ wrapper.appendChild(keyboard)
 wrapper.appendChild(tooltip)
 document.body.appendChild(wrapper)
 
-import { eng_lower, char_keys, eng_upper, eng_shift, eng_shift_lower, filter, rus_lower, rus_upper, rus_shift, rus_shift_lower,key_codes} from "../layouts.js"
+import { eng_lower, char_keys, eng_upper, eng_shift, eng_shift_lower, filter, rus_lower, rus_upper, rus_shift, rus_shift_lower,key_codes} from "./layouts.js"
 var current = eng_lower
 var current_lang = "eng"
 var prev = []

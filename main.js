@@ -192,7 +192,7 @@ for (let i = 0; i < buttons.length; ++i) {
   buttons[i].addEventListener('mousedown', () => {
     if (i === 54 || i === 63 || i === 59) {
       body.dispatchEvent(new KeyboardEvent('keydown', { keyCode: keyCodes[i], location: 2 }));
-    } else if (i === 42 || i === 55 || i === 58) {
+    } else if (i === 42 || i === 55 || i === 57) {
       body.dispatchEvent(new KeyboardEvent('keydown', { keyCode: keyCodes[i], location: 1 }));
     } else {
       body.dispatchEvent(new KeyboardEvent('keydown', { keyCode: keyCodes[i] }));
@@ -225,7 +225,7 @@ for (let i = 0; i < buttons.length; ++i) {
   buttons[i].addEventListener('mouseup', () => {
     if (i === 54 || i === 63 || i === 59) {
       body.dispatchEvent(new KeyboardEvent('keyup', { keyCode: keyCodes[i], location: 2 }));
-    } else if (i === 42 || i === 55 || i === 58) {
+    } else if (i === 42 || i === 55 || i === 57) {
       body.dispatchEvent(new KeyboardEvent('keyup', { keyCode: keyCodes[i], location: 1 }));
     } else {
       body.dispatchEvent(new KeyboardEvent('keyup', { keyCode: keyCodes[i] }));
@@ -238,7 +238,6 @@ text.focus();
 let shiftFlag = true;
 
 text.addEventListener('blur', () => text.focus());
-text.value = 'This is a test';
 
 body.addEventListener('keydown', (e) => {
   e.preventDefault();
@@ -301,7 +300,7 @@ body.addEventListener('keydown', (e) => {
     }
     if (e.keyCode === 40) {
       buttons[61].classList.add('active');
-      text.setSelectionRange(text.selectionEnd + 98, text.selectionEnd + 98);
+      text.setSelectionRange(text.selectionEnd + 91, text.selectionEnd + 91);
     }
     if (e.keyCode === 39) {
       buttons[62].classList.add('active');
@@ -309,7 +308,7 @@ body.addEventListener('keydown', (e) => {
     }
     if (e.keyCode === 38) {
       buttons[53].classList.add('active');
-      text.setSelectionRange(text.selectionEnd - 98, text.selectionEnd - 98);
+      text.setSelectionRange(text.selectionEnd - 91, text.selectionEnd - 91);
     }
     if (e.keyCode === 46) {
       buttons[28].classList.add('active');
@@ -374,4 +373,9 @@ body.addEventListener('keyup', (e) => {
     if (e.keyCode === 9)buttons[14].classList.remove('active');
   }
   e.preventDefault();
+});
+
+tooltip.addEventListener('click', () => {
+  lang();
+  keyRender();
 });
